@@ -1,4 +1,4 @@
-package strategy
+package strategy.cards
 
 import strategy.cards.ICardStrategy
 

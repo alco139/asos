@@ -1,7 +1,8 @@
-package strategy
+package strategy.cards
 
-class VisaCardStrategy : IBankCardStrategy {
-    override fun pay() {
+class VisaCardStrategy : ICardStrategy {
+    override fun pay(cardNumber: String, amount: Double) {
         println("VISA card payment")
     }
 }
+

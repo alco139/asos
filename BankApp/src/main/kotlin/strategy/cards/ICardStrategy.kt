@@ -1,5 +1,5 @@
-package strategy
+package strategy.cards
 
-interface IBankCardStrategy {
-    fun pay()
+interface ICardStrategy {
+    fun pay(cardNumber: String, amount: Double)
 }

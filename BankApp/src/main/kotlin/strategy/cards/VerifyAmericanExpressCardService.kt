@@ -1,4 +1,4 @@
-package strategy.cards.verifiers
+package strategy.cards
 
 class VerifyAmericanExpressCardService {
     fun verifyCard(number: String) {
