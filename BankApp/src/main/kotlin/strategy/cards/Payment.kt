@@ -1,7 +1,5 @@
 package strategy.cards
 
-import strategy.cards.ICardStrategy
-
 class Payment(
     var bankCardStrategy: ICardStrategy,
 ) {
