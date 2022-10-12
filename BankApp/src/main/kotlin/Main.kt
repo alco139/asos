@@ -4,6 +4,10 @@ import strategy.cards.AmericanExpressCardStrategy
 import strategy.cards.VerifyAmericanExpressCardService
 import strategy.cards.VisaCardStrategy
 import strategy.lamdas.LambdaPayment
+import visitor.account.Account
+import visitor.account.PurposeAccount
+import visitor.service.BalanceVisitor
+import visitor.service.ServiceVisitor
 
 fun main(args: Array<String>) {
     val creditCardNumber = "12345"
@@ -35,4 +39,16 @@ fun main(args: Array<String>) {
     bank.customer.lambdaPayment = lambdaPayment
     bank.customer.lambdaPayment!!.payByCreditCard(creditCardNumber, 15.0)
     // Strategy with lambdas
+
+    // Visitor
+    showBalanceOnPurposeAccount()
+}
+
+fun showBalanceOnPurposeAccount() {
+    println("\nRunning visitor...")
+
+    val purposeAccount: Account = PurposeAccount()
+    val balanceVisitor: ServiceVisitor = BalanceVisitor()
+
+    purposeAccount.accept(balanceVisitor)
 }
